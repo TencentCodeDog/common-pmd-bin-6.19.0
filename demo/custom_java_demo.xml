@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<ruleset name="My custom rules"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+    
+    <description>
+        <!--    对规则集的描述介绍    -->
+        Rules which enforce a specific coding style.
+    </description>
+    
+    <!--   class属性指向Java规则代码实现所在的位置     -->
+    <rule name="WhileLoopsMustUseBracesRule"
+        message="Avoid using 'while' statements without curly braces"
+        class="net.sourceforge.pmd.lang.java.rule.WhileLoopsMustUseBracesRule"
+        externalInfoUrl="custom_java_demo.xml/WhileLoopsMustUseBracesRule">
+        <description>
+            Avoid using 'while' statements without using curly braces
+        </description>
+        <priority>3</priority>
+        
+        <example>
+            <![CDATA[
+                public void doSomething() {
+                while (true)
+                x++;
+                }
+            ]]>
+        </example>
+    </rule>
+</ruleset>
